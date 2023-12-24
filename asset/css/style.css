@@ -86,6 +86,33 @@ body {
   display: none;
 }
 
+/* search-box navbar */
+.navbar .search-form {
+  position: absolute;
+  top: 101%;
+  right: 7%;
+  width: 50rem;
+  height: 5rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.3s;
+}
+
+.navbar .search-form.active {
+  transform: scaleY(1);
+}
+
+.navbar .search-form #search-box {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  color: var(--bg1);
+  padding: 1rem;
+}
+
 /* section */
 .hero {
   min-height: 100vh;
@@ -140,11 +167,13 @@ body {
 
 .about,
 .menu,
+.products,
 .contact {
   padding: 7rem 7% 1.4rem;
 }
 .about h2,
 .menu h2,
+.products h2,
 .contact h2 {
   font-size: 2.7rem;
   text-align: center;
@@ -152,6 +181,7 @@ body {
 }
 .about h2 span,
 .menu h2 span,
+.products h2 span,
 .contact h2 span {
   color: var(--primary);
 }
@@ -187,6 +217,7 @@ body {
   margin-bottom: 1rem;
 }
 .menu p,
+.products p,
 .contact p {
   text-align: center;
   max-width: 30rem;
@@ -212,6 +243,75 @@ body {
 
 .menu .row .menu-card .menu-card-title {
   margin: 1rem auto 1.2rem;
+}
+
+/* product */
+.products .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.products .product-card {
+  text-align: center;
+  border: 1px solid #666;
+  padding: 2rem;
+}
+
+.products .product-icons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.products .product-icons a {
+  border: 1px solid #666;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  margin: 0.3rem;
+  color: #fff;
+  align-items: center;
+}
+
+.products .product-icons a:hover {
+  background-color: var(--primary);
+}
+
+.products .product-image {
+  padding: 1rem 0;
+}
+.products .product-image img {
+  object-fit: cover;
+  height: 25rem;
+}
+
+.products .product-content h3 {
+  font-size: 1.8rem;
+}
+
+.products .product-star {
+  font-size: 1.5rem;
+  padding: 0.8rem;
+  color: var(--primary);
+}
+
+.products .product-star .star-fill {
+  fill: var(--primary);
+}
+
+.products .product-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.products .product-price span {
+  text-decoration: line-through;
+  font-size: 0.8rem;
+  font-weight: lighter;
+  vertical-align: middle; /* Menengahkan dari sampingnya */
+  display: inline-block; /* Mengubah elemen menjadi blok agar properti vertical-align bekerja */
 }
 
 /* contact */
@@ -381,6 +481,11 @@ footer .credit p a:hover {
 
   .contact .row form {
     padding-top: 0;
+  }
+
+  .navbar .search-form {
+    right: 2rem;
+    width: 90%;
   }
 }
 
