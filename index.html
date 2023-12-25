@@ -30,7 +30,7 @@
 
       <div class="navbar-extra">
         <a href="#" id="search-button"><i data-feather="search"></i></a>
-        <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
+        <a href="#" id="shopping-cart-button"><i data-feather="shopping-cart"></i></a>
         <a href="#" id="menu-list"><i data-feather="menu"></i></a>
       </div>
 
@@ -40,6 +40,35 @@
         <label for="search-box"><i data-feather="search"></i></label>
       </div>
       <!-- search form end -->
+
+      <!-- shopping cart start -->
+      <div class="shopping-cart">
+        <div class="cart-item">
+          <img src="asset/img/product/product5.jpg" alt="product1" />
+          <div class="item-detail">
+            <h3>Product 1</h3>
+            <div class="item-price">IDR 30K</div>
+          </div>
+          <i data-feather="trash-2" class="remove-item"></i>
+        </div>
+        <div class="cart-item">
+          <img src="asset/img/product/product2.jpg" alt="product1" />
+          <div class="item-detail">
+            <h3>Product 2</h3>
+            <div class="item-price">IDR 34K</div>
+          </div>
+          <i data-feather="trash-2" class="remove-item"></i>
+        </div>
+        <div class="cart-item">
+          <img src="asset/img/product/product3.jpg" alt="product1" />
+          <div class="item-detail">
+            <h3>Product 3</h3>
+            <div class="item-price">IDR 35K</div>
+          </div>
+          <i data-feather="trash-2" class="remove-item"></i>
+        </div>
+      </div>
+      <!-- shopping cart end -->
     </nav>
     <!-- Navbar end -->
 
@@ -221,10 +250,10 @@
           <div class="product-content">
             <h3>CoffeeCoding Beans</h3>
             <div class="product-star">
-              <i data-feather="star"></i>
-              <i data-feather="star"></i>
-              <i data-feather="star"></i>
-              <i data-feather="star"></i>
+              <i data-feather="star" class="star-fill"></i>
+              <i data-feather="star" class="star-fill"></i>
+              <i data-feather="star" class="star-fill"></i>
+              <i data-feather="star" class="star-fill"></i>
               <i data-feather="star"></i>
             </div>
             <div class="product-price">IDR 30K <span>IDR 60K</span></div>
@@ -241,10 +270,10 @@
           <div class="product-content">
             <h3>CoffeeCoding Beans</h3>
             <div class="product-star">
-              <i data-feather="star"></i>
-              <i data-feather="star"></i>
-              <i data-feather="star"></i>
-              <i data-feather="star"></i>
+              <i data-feather="star" class="star-fill"></i>
+              <i data-feather="star" class="star-fill"></i>
+              <i data-feather="star" class="star-fill"></i>
+              <i data-feather="star" class="star-fill"></i>
               <i data-feather="star"></i>
             </div>
             <div class="product-price">IDR 30K <span>IDR 60K</span></div>
@@ -317,10 +346,16 @@
     <!-- JS function -->
     <script>
       const navbarNav = document.querySelector(".navbar-nav");
+      const shoppingCart = document.querySelector(".shopping-cart");
 
       //   sewaktu menu di klik
-      document.querySelector("#menu-list").onclick = () => {
+      document.querySelector("#menu-list").onclick = (e) => {
         navbarNav.classList.toggle("active");
+        e.preventDefault();
+      };
+      document.querySelector("#shopping-cart-button").onclick = (e) => {
+        shoppingCart.classList.toggle("active");
+        e.preventDefault();
       };
 
       // menghilangkan hamburger menu kalo di click di luar konten navbar menu
@@ -344,6 +379,7 @@
       //menghilangkan elemen kalo di click di luar konten navbar menu
       const menuList = document.querySelector("#menu-list");
       const searchButton = document.querySelector("#search-button");
+      const scButton = document.querySelector("#shopping-cart-button");
 
       document.addEventListener("click", function (e) {
         if (!menuList.contains(e.target) && !navbarNav.contains(e.target)) {
@@ -351,6 +387,9 @@
         }
         if (!searchButton.contains(e.target) && !searchForm.contains(e.target)) {
           searchForm.classList.remove("active");
+        }
+        if (!scButton.contains(e.target) && !shoppingCart.contains(e.target)) {
+          shoppingCart.classList.remove("active");
         }
       });
     </script>

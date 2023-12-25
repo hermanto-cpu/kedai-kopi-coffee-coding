@@ -113,6 +113,55 @@ body {
   padding: 1rem;
 }
 
+/* navbar shopping-cart */
+.navbar .shopping-cart {
+  position: absolute;
+  top: 100%;
+  right: -100%;
+  height: 100vh;
+  width: 35rem;
+  padding: 0 1.5rem;
+  background-color: #ffffff;
+  color: var(--bg1);
+  transition: 0.4s;
+}
+
+.navbar .shopping-cart.active {
+  right: 0%;
+}
+
+.navbar .shopping-cart img {
+  height: 6rem;
+  border-radius: 50%;
+}
+
+.navbar .shopping-cart .cart-item {
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed #666;
+  position: relative;
+}
+
+.navbar .shopping-cart h3 {
+  font-size: 1.4rem;
+  padding-bottom: 0.4rem;
+}
+.navbar .shopping-cart .item-price {
+  font-size: 1.2rem;
+}
+
+.navbar .shopping-cart .remove-item {
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+.navbar .shopping-cart .remove-item:hover {
+  color: var(--primary);
+}
+
 /* section */
 .hero {
   min-height: 100vh;
