@@ -142,7 +142,7 @@
         <div class="product-card">
           <div class="product-icons">
             <a href="#"><i data-feather="shopping-cart"></i></a>
-            <a href="#"><i data-feather="eye"></i></a>
+            <a href="#" class="item-detail-button" data-image="asset/img/product/product7.jpg"><i data-feather="eye"></i></a>
           </div>
           <div class="product-image">
             <img src="asset/img/product/product7.jpg" alt="product 1" />
@@ -162,7 +162,7 @@
         <div class="product-card">
           <div class="product-icons">
             <a href="#"><i data-feather="shopping-cart"></i></a>
-            <a href="#"><i data-feather="eye"></i></a>
+            <a href="#" class="item-detail-button" data-image="asset/img/product/product4.jpg"><i data-feather="eye"></i></a>
           </div>
           <div class="product-image">
             <img src="asset/img/product/product4.jpg" alt="product 1" />
@@ -182,7 +182,7 @@
         <div class="product-card">
           <div class="product-icons">
             <a href="#"><i data-feather="shopping-cart"></i></a>
-            <a href="#"><i data-feather="eye"></i></a>
+            <a href="#" class="item-detail-button" data-image="asset/img/product/product2.jpg"><i data-feather="eye"></i></a>
           </div>
           <div class="product-image">
             <img src="asset/img/product/product2.jpg" alt="product 1" />
@@ -202,7 +202,7 @@
         <div class="product-card">
           <div class="product-icons">
             <a href="#"><i data-feather="shopping-cart"></i></a>
-            <a href="#"><i data-feather="eye"></i></a>
+            <a href="#" class="item-detail-button" data-image="asset/img/product/product3.jpg"><i data-feather="eye"></i></a>
           </div>
           <div class="product-image">
             <img src="asset/img/product/product3.jpg" alt="product 1" />
@@ -222,7 +222,7 @@
         <div class="product-card">
           <div class="product-icons">
             <a href="#"><i data-feather="shopping-cart"></i></a>
-            <a href="#"><i data-feather="eye"></i></a>
+            <a href="#" class="item-detail-button" data-image="asset/img/product/product1.jpg"><i data-feather="eye"></i></a>
           </div>
           <div class="product-image">
             <img src="asset/img/product/product1.jpg" alt="product 1" />
@@ -242,7 +242,7 @@
         <div class="product-card">
           <div class="product-icons">
             <a href="#"><i data-feather="shopping-cart"></i></a>
-            <a href="#"><i data-feather="eye"></i></a>
+            <a href="#" class="item-detail-button" data-image="asset/img/product/product5.jpg"><i data-feather="eye"></i></a>
           </div>
           <div class="product-image">
             <img src="asset/img/product/product5.jpg" alt="product 1" />
@@ -262,7 +262,7 @@
         <div class="product-card">
           <div class="product-icons">
             <a href="#"><i data-feather="shopping-cart"></i></a>
-            <a href="#"><i data-feather="eye"></i></a>
+            <a href="#" class="item-detail-button" data-image="asset/img/product/product6.jpg"><i data-feather="eye"></i></a>
           </div>
           <div class="product-image">
             <img src="asset/img/product/product6.jpg" alt="product 1" />
@@ -338,6 +338,30 @@
     </footer>
     <!-- end footer -->
 
+    <!-- modal box item detail start -->
+    <div class="modal" id="item-detail-modal">
+      <div class="modal-container">
+        <a href="#" class="close-icon"><i data-feather="x-circle"></i></a>
+        <div class="modal-content">
+          <img src="asset/img/product/product1.jpg" alt="product 1" />
+          <div class="product-content">
+            <h3>Product 1</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo ullam molestias dolorem quia non! Vel doloribus architecto consectetur repellendus aut? Atque assumenda ab placeat minus.</p>
+            <div class="product-star">
+              <i data-feather="star" class="star-fill"></i>
+              <i data-feather="star" class="star-fill"></i>
+              <i data-feather="star" class="star-fill"></i>
+              <i data-feather="star" class="star-fill"></i>
+              <i data-feather="star" class="star-fill"></i>
+            </div>
+            <div class="product-price">IDR 30K <span>IDR 60K</span></div>
+            <a href="#"><i data-feather="shopping-cart"></i><span>add to cart</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal box item detail end -->
+
     <!-- scriptt -->
     <script>
       feather.replace();
@@ -392,6 +416,33 @@
           shoppingCart.classList.remove("active");
         }
       });
+
+      // modal detail
+
+      const itemDetailModal = document.querySelector("#item-detail-modal");
+      const itemDetailButtons = document.querySelectorAll(".item-detail-button");
+      const itemCloseIcon = document.querySelector(".close-icon");
+      const modalImage = document.querySelector("#item-detail-modal img");
+
+      itemDetailButtons.forEach((btn) => {
+        btn.onclick = (e) => {
+          const imageUrl = btn.getAttribute("data-image");
+          modalImage.setAttribute("src", imageUrl);
+          itemDetailModal.style.display = "flex";
+          e.preventDefault();
+        };
+      });
+
+      itemCloseIcon.onclick = (e) => {
+        itemDetailModal.style.display = "none";
+        e.preventDefault();
+      };
+
+      window.onclick = (e) => {
+        if (e.target === itemDetailModal) {
+          itemDetailModal.style.display = "none";
+        }
+      };
     </script>
   </body>
 </html>
