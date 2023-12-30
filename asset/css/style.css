@@ -114,6 +114,20 @@ body {
 }
 
 /* navbar shopping-cart */
+.navbar #shopping-cart-button {
+  position: relative;
+}
+.navbar #shopping-cart-button .quantity-badge {
+  display: inline-block;
+  padding: 1px 5px;
+  background-color: red;
+  border-radius: 7px;
+  font-size: 0.8rem;
+  position: absolute;
+  top: 0%;
+  right: -10px;
+}
+
 .navbar .shopping-cart {
   position: absolute;
   top: 100%;
@@ -355,13 +369,15 @@ body {
   font-size: 1.2rem;
   font-weight: bold;
 }
-.products .product-price span {
+
+/* product price discon */
+/* .products .product-price span {
   text-decoration: line-through;
   font-size: 0.8rem;
-  font-weight: lighter;
-  vertical-align: middle; /* Menengahkan dari sampingnya */
-  display: inline-block; /* Mengubah elemen menjadi blok agar properti vertical-align bekerja */
-}
+  font-weight: lighter; */
+/* vertical-align: middle; Menengahkan dari sampingnya */
+/* display: inline-block; Mengubah elemen menjadi blok agar properti vertical-align bekerja */
+/* } */
 
 /* contact */
 
