@@ -132,7 +132,7 @@ body {
   position: absolute;
   top: 100%;
   right: -100%;
-  height: 100vh;
+  height: 90vh;
   width: 35rem;
   padding: 0 1.5rem;
   background-color: #ffffff;
@@ -142,10 +142,11 @@ body {
 
 .navbar .shopping-cart.active {
   right: 0%;
+  overflow-y: auto;
 }
 
 .navbar .shopping-cart img {
-  height: 6rem;
+  height: 4rem;
   border-radius: 50%;
 }
 
@@ -158,23 +159,95 @@ body {
   border-bottom: 1px dashed #666;
   position: relative;
 }
+/* add remove cart item */
+.navbar .shopping-cart .cart-item #add,
+.navbar .shopping-cart .cart-item #remove {
+  display: inline-block;
+  padding: 2px 5px;
+  background-color: #030303;
+  cursor: pointer;
+  margin: 0 8px;
+  color: #fefefe;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
 
 .navbar .shopping-cart h3 {
+  font-size: 1.2rem;
+  padding-bottom: 0.1rem;
+}
+.navbar .shopping-cart h4 {
   font-size: 1.4rem;
-  padding-bottom: 0.4rem;
+  margin-top: -1rem;
+  text-align: center;
 }
 .navbar .shopping-cart .item-price {
   font-size: 1.2rem;
 }
 
-.navbar .shopping-cart .remove-item {
+/* checkoutForm */
+.form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #23211e;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+.form-container h5 {
+  text-align: center;
+  font-size: 1rem;
+}
+.form-container form {
+  text-align: center;
+  width: 100%;
+}
+.form-container label {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem 0;
+}
+/* menghilangkan icon atas bawah diinputan number */
+.form-container label input[type="number"]::-webkit-inner-spin-button,
+.form-container label input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+.form-container label input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.form-container span {
+  text-align: right;
+}
+.form-container input {
+  background-color: #cbcbcb;
+  padding: 5px;
+  font-size: 1rem;
+  width: 70%;
+}
+.form-container .checkout-button {
+  padding: 6px 14px;
+  background-color: royalblue;
+  color: #fefefe;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 20px;
+  margin: 1rem auto;
+  cursor: pointer;
+}
+
+/* icon sampah */
+/* .navbar .shopping-cart .remove-item {
   position: absolute;
   right: 1rem;
   cursor: pointer;
 }
 .navbar .shopping-cart .remove-item:hover {
   color: var(--primary);
-}
+} */
 
 /* section */
 .hero {
@@ -629,6 +702,10 @@ footer .credit p a:hover {
   }
   .modal-container {
     margin: 9% auto;
+  }
+  /* shopping-cart */
+  .navbar .shopping-cart {
+    height: 100vh;
   }
 }
 
