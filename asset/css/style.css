@@ -238,6 +238,10 @@ body {
   margin: 1rem auto;
   cursor: pointer;
 }
+.form-container .checkout-button.disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
 
 /* icon sampah */
 /* .navbar .shopping-cart .remove-item {
